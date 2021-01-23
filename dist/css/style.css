@@ -76,6 +76,37 @@ button,
   }
 }
 
+.header.open .overlay {
+  display: block;
+  -webkit-animation: fade-in 300ms ease-in-out forwards;
+          animation: fade-in 300ms ease-in-out forwards;
+}
+
+.header.open .header__menu > span:first-child {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.header.open .header__menu > span:nth-child(2) {
+  opacity: 0;
+}
+
+.header.open .header__menu > span:last-child {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
+.header .overlay {
+  display: none;
+  position: fixed;
+  top: 3.75rem;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#2d314d), to(transparent));
+  background-image: linear-gradient(#2d314d, transparent);
+}
+
 .header nav {
   padding: 1.0625rem 1.5rem;
 }
@@ -90,10 +121,14 @@ button,
   width: 26px;
   height: 3px;
   background-color: #2d314d;
+  -webkit-transition: all 300ms ease-in-out;
+  transition: all 300ms ease-in-out;
+  -webkit-transform-origin: 2px 1.5px;
+          transform-origin: 2px 1.5px;
 }
 
 .header__menu > span:not(:last-child) {
-  margin-bottom: 3px;
+  margin-bottom: 5px;
 }
 
 .header__links a {
@@ -140,5 +175,41 @@ button,
 
 .header__cta:hover {
   opacity: 0.75;
+}
+
+@-webkit-keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
 }
 /*# sourceMappingURL=style.css.map */

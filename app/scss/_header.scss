@@ -1,4 +1,38 @@
 .header {
+
+// header open styles
+&.open {
+
+  .overlay {
+    display: block;
+    animation: fade-in 300ms ease-in-out forwards;
+  }
+  .header__menu {
+    > span:first-child {
+      transform: rotate(45deg);
+    }
+  
+    > span:nth-child(2) {
+      opacity: 0;
+    }
+  
+    > span:last-child {
+      transform: rotate(-45deg);
+    }
+  }
+}
+
+// body background when hamburger will wlicked 
+.overlay {
+  display: none;
+  position: fixed;
+  top: 3.75rem;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-image: linear-gradient($DarkBlue, transparent);
+}
+
   nav {
     padding: 1.0625rem 1.5rem;
   }
@@ -16,11 +50,14 @@
       width: 26px;
       height: 3px;
       background-color: $DarkBlue;
+      transition: all 300ms ease-in-out;
+      transform-origin: 2px 1.5px;
 
       &:not(:last-child) {
-        margin-bottom: 3px;
+        margin-bottom: 5px;
       }
     }
+    
   }
 
   &__links {
