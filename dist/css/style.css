@@ -22,6 +22,10 @@ body {
   color: #9698a6;
 }
 
+body.noscroll {
+  overflow: hidden;
+}
+
 .container {
   padding-left: 1.5rem;
   padding-right: 1.5rem;
@@ -98,7 +102,7 @@ button,
 .header .overlay {
   opacity: 0;
   position: fixed;
-  top: 3.75rem;
+  top: 0;
   right: 0;
   bottom: 0;
   left: 0;
@@ -106,7 +110,13 @@ button,
   background-image: linear-gradient(#2d314d, transparent);
 }
 
+.header .overlay.noscroll {
+  overflow: hidden;
+}
+
 .header nav {
+  background-color: #fff;
+  position: relative;
   padding-top: 1.0625rem;
   padding-bottom: 1.0625rem;
 }
@@ -194,6 +204,10 @@ button,
 
 .header__cta:hover {
   opacity: 0.75;
+}
+
+.has-fade {
+  visibility: hidden;
 }
 
 @-webkit-keyframes fade-in {
