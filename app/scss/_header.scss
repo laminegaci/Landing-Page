@@ -1,37 +1,31 @@
 .header {
+  // header open styles
+  &.open {
+    .header__toggle {
+      > span:first-child {
+        transform: rotate(45deg);
+      }
 
-// header open styles
-&.open {
+      > span:nth-child(2) {
+        opacity: 0;
+      }
 
+      > span:last-child {
+        transform: rotate(-45deg);
+      }
+    }
+  }
+
+  // body background when hamburger will clicked
   .overlay {
-    display: block;
-    animation: fade-in 300ms ease-in-out forwards;
+    opacity: 0;
+    position: fixed;
+    top: 3.75rem;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: linear-gradient($DarkBlue, transparent);
   }
-  .header__toggle {
-    > span:first-child {
-      transform: rotate(45deg);
-    }
-  
-    > span:nth-child(2) {
-      opacity: 0;
-    }
-  
-    > span:last-child {
-      transform: rotate(-45deg);
-    }
-  }
-}
-
-// body background when hamburger will clicked 
-.overlay {
-  display: none;
-  position: fixed;
-  top: 3.75rem;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background-image: linear-gradient($DarkBlue, transparent);
-}
 
   nav {
     padding-top: 1.0625rem;
@@ -40,7 +34,7 @@
   &__logo {
     img {
       width: 8.8125rem;
-      height: 1.375rem ;
+      height: 1.375rem;
     }
   }
 
@@ -58,7 +52,6 @@
         margin-bottom: 5px;
       }
     }
-    
   }
 
   &__menu {
@@ -83,12 +76,12 @@
     a {
       position: relative;
       font-size: $font-sm;
-      color: $GrayishBlue; 
+      color: $GrayishBlue;
       transition: color 300ms ease-in-out;
 
-      &:not(:last-child){
-        margin-right: 32px ;
-      } 
+      &:not(:last-child) {
+        margin-right: 32px;
+      }
 
       &::before {
         content: "";
@@ -104,8 +97,8 @@
       }
 
       &:hover {
-        color:$DarkBlue ;
-        &::before{
+        color: $DarkBlue;
+        &::before {
           opacity: 1;
         }
       }
@@ -113,12 +106,12 @@
   }
 
   &__cta {
-      font-size: $font-sm;
-      color: $White; 
-      transition: opacity 300ms ease-in-out;
+    font-size: $font-sm;
+    color: $White;
+    transition: opacity 300ms ease-in-out;
 
-      &:hover {
-        opacity: 0.75;
-      }
+    &:hover {
+      opacity: 0.75;
+    }
   }
 }

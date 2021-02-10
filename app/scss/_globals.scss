@@ -56,15 +56,15 @@ button,
   background: linear-gradient(to right, $LimeGreen, $BrightCyan);
 }
 
-// visibility 
+// visibility
 .hide-for-mobile {
-    @include breakpoint-down(medium){
-      display: none;
-    }
+  @include breakpoint-down(medium) {
+    display: none;
+  }
 }
 
 .hide-for-desktop {
-  @include breakpoint-up(large){
+  @include breakpoint-up(large) {
     display: none;
   }
 }
