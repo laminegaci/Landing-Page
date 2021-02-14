@@ -25,10 +25,6 @@
     bottom: 0;
     left: 0;
     background-image: linear-gradient($DarkBlue, transparent);
-
-    &.noscroll {
-      overflow: hidden;
-    }
   }
 
   nav {
@@ -108,16 +104,6 @@
           opacity: 1;
         }
       }
-    }
-  }
-
-  &__cta {
-    font-size: $font-sm;
-    color: $White;
-    transition: opacity 300ms ease-in-out;
-
-    &:hover {
-      opacity: 0.75;
     }
   }
 }
